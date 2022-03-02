@@ -8,7 +8,7 @@ function initMap() {
     zoom: 9,
   });
   map.data.loadGeoJson(
-      "data.json"
+      "./merged_layers_cleaned.json"
       );
 //  map.data.setStyle({strokeColor:'red',
 //                     icon: image});
