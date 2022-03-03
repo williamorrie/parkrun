@@ -19,6 +19,6 @@ function initMap() {
                      marker_base + 'red-dot.png';
     return {
       icon: marker_url;
-    }
+    };
   });
 };
