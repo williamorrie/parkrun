@@ -12,7 +12,7 @@ function initMap() {
   );
   map.data.setStyle(function(feature) {
     const marker_base = "https://maps.google.com/mapfiles/ms/icons/"
-    var ranking = int(feature.getProperty('ranking'));
+    var ranking = parseInt(feature.getProperty('ranking'));
     var marker_url = ranking == NaN ? marker_base + 'pink-dot.png' : 
                      ranking < 250 ? marker_base + 'green-dot.png' : 
                      ranking < 500 ? marker_base + 'orange-dot.png' : 
