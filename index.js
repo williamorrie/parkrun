@@ -11,7 +11,7 @@ function initMap() {
       "./data.geojson"
   );
   map.data.setStyle(function(feature) {
-    const marker_base = "http://maps.google.com/mapfiles/ms/icons/"
+    const marker_base = "https://maps.google.com/mapfiles/ms/icons/"
     var ranking = int(feature.getProperty('ranking'));
     var marker_url = ranking == NaN ? marker_base + 'pink-dot.png' : 
                      ranking < 250 ? marker_base + 'green-dot.png' : 
