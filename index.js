@@ -18,7 +18,7 @@ function initMap() {
                      ranking < 500 ? marker_base + 'orange-dot.png' : 
                      marker_base + 'red-dot.png';
     return {
-      icon: marker_url;
+      icon: marker_url
     };
   });
 };
