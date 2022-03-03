@@ -9,7 +9,16 @@ function initMap() {
   });
   map.data.loadGeoJson(
       "./data.geojson"
-      );
-//  map.data.setStyle({strokeColor:'red',
-//                     icon: image});
+  );
+  map.data.setStyle(function(feature) {
+    const marker_base = "http://maps.google.com/mapfiles/ms/icons/"
+    var ranking = feature.getProperty('ranking');
+    var marker_url = ranking == '-' ? marker_base + 'black-dot.png' : 
+                     ranking < 250 ? marker_base + 'green-dot.png' : 
+                     ranking < 500 ? marker_base + 'orange-dot.png' : 
+                     marker_base + 'red-dot.png';
+    return {
+      icon: marker_url;
+    }
+  });
 };
