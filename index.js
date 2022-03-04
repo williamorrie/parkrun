@@ -17,21 +17,22 @@ function initMap() {
     //const marker_base = "https://maps.google.com/mapfiles/ms/icons/"
     const marker_base = "https://maps.google.com/mapfiles/kml/shapes/"
     var ranking = parseInt(feature.getProperty('ranking'));
-    var marker_url = ranking == -1 ? marker_base + 'info_circle.png.png' : 
+    var marker_url = ranking == -1 ? marker_base + 'info_circle.png' : 
                      ranking < 250 ? marker_base + 'hiker.png' : 
                      ranking < 500 ? marker_base + 'police.png' : 
                      marker_base + 'caution.png';
+    var hover_title = feature.getProperty('index') + ": " + ranking + "/750 (approx.)"
     return {
       icon: marker_url,
       clickable: true,
-      title: ranking
+      title: hover_title
     };
   });
-    // Set mouseover event for each feature.
-  map.data.addListener("mouseover", (event) => {
-    document.getElementById("info-box").textContent =
-      "URI " + + event.feature.getProperty("uri") +
-      "Ranking: " + event.feature.getProperty("ranking") +
-      "Index: " + event.feature.getProperty("index");
-  });
+  ///// TODO
+  ///// Popup with description and URL
+  //   // Set mouseover event for each feature.
+  // map.data.addListener("click", (event) => {
+  //   document.getElementById("info-box").textContent =
+  //   "Course Description: " + event.feature.getProperty("course").getProperty("Description");
+  // });
 };
