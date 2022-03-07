@@ -30,9 +30,9 @@ function initMap() {
   });
   ///// TODO
   ///// Popup with description and URL
-  //   // Set mouseover event for each feature.
-  // map.data.addListener("click", (event) => {
-  //   document.getElementById("info-box").textContent =
-  //   "Course Description: " + event.feature.getProperty("course").getProperty("Description");
-  // });
+    // Set mouseover event for each feature.
+  map.data.addListener("click", function(e) {
+    document.getElementById("info-box").textContent =
+    e.feature.getProperty('index') + ": " + e.feature.getProperty('ranking') + "/750 (approx.)"
+  });
 };
