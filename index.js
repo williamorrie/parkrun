@@ -49,14 +49,12 @@ function initMap() {
       title: hover_title
     };
   });
-  ///// TODO
-  ///// Popup with description and URL
-    // Set mouseover event for each feature.
+  const infobox = document.getElementById("info-box")
   map.data.addListener("click", function(e) {
-    document.getElementById("info-box").textContent =
+    infobox.textContent =
     e.feature.getProperty('index') + ": " + e.feature.getProperty('ranking') + "/750 (approx.)"
   });
-  
+
   const legend = document.getElementById("legend");
 
   for (const key in icons) {
@@ -69,6 +67,7 @@ function initMap() {
     legend.appendChild(div);
   }
 
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(infobox);
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
   
 };
