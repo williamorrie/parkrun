@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Fastest / Slowest U.K. Parkruns</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./index.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A personal corner of the web: small projects, running, and things worth exploring." />
+    <title>orr.ie — A personal corner of the web</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="map"></div>
-    <div id="info-box"></div>
-    <div id="legend"><h3>Legend</h3></div>
-    
-    <!-- Async script executes immediately and must be after any DOM elements used in callback.  -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3M2lmeay_k5-rrfW5H5d-SARYZWqK3gs&callback=initMap&v=weekly"
-      async
-    ></script>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="orr.ie home">orr.ie<span aria-hidden="true"> /</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/williamorrie">GitHub</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro" id="about" aria-labelledby="intro-title">
+        <p class="eyebrow">A personal corner of the web</p>
+        <h1 id="intro-title">Hello. Welcome to orr.ie.</h1>
+        <p class="lead">A home for small projects, curious ideas, and the occasional running detour.</p>
+        <p>I enjoy exploring ideas and making useful things. This is a place to collect a few of them, one small project at a time.</p>
+      </section>
+      <section id="projects" aria-labelledby="projects-title">
+        <p class="eyebrow">Things to explore</p>
+        <h2 id="projects-title">Projects</h2>
+        <a class="project-card" href="./parkrun/">
+          <span class="tag">Running · Maps · Data</span>
+          <h3>parkrun explorer <span aria-hidden="true">↗</span></h3>
+          <p>Find a new Saturday morning route. Browse UK parkrun events, explore the map, and compare the saved course rankings.</p>
+          <span class="project-link">Explore parkruns <span aria-hidden="true">→</span></span>
+        </a>
+      </section>
+      <section class="currently" aria-labelledby="currently-title">
+        <h2 id="currently-title">Currently</h2>
+        <p>Making this little corner of the internet more useful. Keeping things simple, leaving room for the next idea.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>orr.ie</span>
+      <a href="https://github.com/williamorrie">Find me on GitHub</a>
+    </footer>
   </body>
 </html>

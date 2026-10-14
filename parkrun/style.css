@@ -1,0 +1,37 @@
+#map {
+  height: clamp(20rem, 60vh, 36rem);
+  border: 1px solid #c7d7c9;
+  border-radius: 0.75rem;
+}
+#map[hidden] { display: none; }
+#info-box, #legend, details {
+  padding: 1rem 1.25rem;
+  background: #edf2e9;
+  border-radius: 0.5rem;
+  margin-block: 1rem;
+}
+#legend h3 { margin-top: 0; font-size: 1.1rem; }
+#legend p { margin-bottom: 0; }
+summary { cursor: pointer; font-weight: 650; }
+code { overflow-wrap: anywhere; }
+label { display: block; font-weight: 650; margin-bottom: 0.5rem; }
+input {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.75rem;
+  border: 1px solid #829a87;
+  border-radius: 0.4rem;
+  font: inherit;
+  background: #fff;
+  color: inherit;
+}
+.event-list {
+  list-style: none;
+  padding: 0;
+  max-height: 36rem;
+  overflow-y: auto;
+}
+.event-list li { padding: 1.25rem 0; border-top: 1px solid #d5dfd5; }
+.event-list h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.event-list p { margin: 0.5rem 0 0; }
+.event-ranking { color: #536d60; font-size: 0.9rem; }
