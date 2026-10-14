@@ -1,41 +1,73 @@
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-#map {
-  height: 100%;
+:root {
+color-scheme: light;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+color: #233b3a;
+background: #f7f8f3;
+line-height: 1.65;
 }
 
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #23645b; text-underline-offset: 0.2em; }
+a:hover { color: #143d37; }
+a:focus-visible, input:focus-visible, summary:focus-visible {
+outline: 3px solid #ab5b24;
+outline-offset: 4px;
 }
-
-#info-box {
-  background-color: white;
-  border: 1px solid black;
-  bottom: 20px;
-  height: 30px;
-  padding: 10px;
-  position: absolute;
-  left: 30px;
-  font-weight: bolder;
-  font-size: xx-large;
+.site-header, main, .site-footer {
+width: min(100% - 3rem, 64rem);
+margin-inline: auto;
 }
-
-#legend {
-  font-family: Arial, sans-serif;
-  background: #fff;
-  padding: 10px;
-  margin: 10px;
-  border: 3px solid #000;
+.site-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1.5rem;
+padding-block: 2rem;
+border-bottom: 1px solid #d5dfd5;
 }
-
-#legend h3 {
-  margin-top: 0;
+.wordmark { font-size: 1.5rem; font-weight: 750; text-decoration: none; }
+.wordmark span { color: #849a83; }
+nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+nav a { font-size: 0.95rem; }
+main { padding-bottom: 4rem; }
+section { margin-top: 3rem; }
+.intro { padding-block: 2rem; max-width: 46rem; }
+.eyebrow { color: #536d60; font-size: 0.8rem; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 700; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.035em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-block: 1rem 1.5rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.4rem; }
+.lead { font-size: 1.3rem; color: #466057; }
+.project-card {
+display: block;
+max-width: 44rem;
+padding: 2rem;
+background: #fff;
+border: 1px solid #c7d7c9;
+border-radius: 1rem;
+text-decoration: none;
+color: inherit;
 }
-
-#legend img {
-  vertical-align: middle;
+.project-card:hover { border-color: #23645b; background: #f0f5ed; }
+.project-card h3 { display: flex; justify-content: space-between; gap: 1rem; }
+.tag { font-size: 0.8rem; color: #536d60; }
+.project-link { font-weight: 650; color: #23645b; }
+.currently { max-width: 44rem; border-left: 3px solid #a3b99a; padding-left: 1.5rem; }
+.currently h2 { font-size: 1.2rem; }
+.site-footer {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 1rem;
+border-top: 1px solid #d5dfd5;
+padding-block: 1.5rem;
+font-size: 0.85rem;
+}
+.skip-link { position: absolute; top: -5rem; left: 1rem; padding: 0.75rem; background: #fff; z-index: 10; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 36rem) {
+.site-header { align-items: flex-start; flex-direction: column; gap: 0.75rem; }
+.intro { padding-block: 0; }
+.project-card { padding: 1.5rem; }
 }

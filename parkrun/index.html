@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore saved UK parkrun course rankings on a map or in a searchable event list." />
+    <!-- Optional: set a Google Maps browser API key restricted to this site's HTTP referrers and Maps JavaScript API. -->
+    <meta name="google-maps-api-key" content="" />
+    <title>parkrun explorer — orr.ie</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../" aria-label="orr.ie home">orr.ie<span aria-hidden="true"> /</span></a>
+      <nav aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="#events">Event list</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section aria-labelledby="explorer-title">
+        <p class="eyebrow">A Saturday morning somewhere new</p>
+        <h1 id="explorer-title">parkrun explorer</h1>
+        <p class="lead">Explore UK parkrun events and compare their saved course rankings, on the map or in the searchable list below.</p>
+        <p>This is a historical snapshot, not a live directory. The original ranking source and update date are not recorded; rankings are approximate positions out of roughly 750 events, not finish times or measured elevation. Check current course details with <a href="https://www.parkrun.org.uk/events/">parkrun</a> before travelling.</p>
+      </section>
+      <section aria-labelledby="map-title">
+        <h2 id="map-title">Course map</h2>
+        <p id="map-status" role="status">The optional map is not enabled. You can still browse and search the saved events below.</p>
+        <div id="map" role="region" aria-label="Map of parkrun events" hidden></div>
+        <p id="info-box" role="status">Select a marker to see the event name and ranking.</p>
+        <div id="legend">
+          <h3>What do the markers mean?</h3>
+          <ul>
+            <li><strong>Fast / flat:</strong> ranks 1–249 (hiker marker).</li>
+            <li><strong>Medium:</strong> ranks 250–499 (police marker).</li>
+            <li><strong>Slow / hilly:</strong> ranks 500+ (caution marker).</li>
+            <li><strong>No ranking:</strong> no saved ranking (information marker).</li>
+          </ul>
+          <p>These are the original explorer's broad labels: a lower number suggests a faster course, but does not guarantee a flat route.</p>
+        </div>
+        <details>
+          <summary>About the optional Google map</summary>
+          <p>The list works without Google Maps. To enable the map, the site owner can set the <code>google-maps-api-key</code> meta tag in <code>parkrun/index.html</code> to a browser key with Maps JavaScript API enabled and billing configured. Restrict the key to the site's HTTP referrers and that API. Keys in static pages are visible to visitors; never use a server-side secret here.</p>
+          <p>If Google Maps is blocked, offline, or rejects the key, use the event list instead.</p>
+        </details>
+      </section>
+      <section id="events" aria-labelledby="events-title">
+        <h2 id="events-title">Browse events</h2>
+        <label for="event-search">Search by event name</label>
+        <input id="event-search" type="search" placeholder="For example, Belfast" aria-controls="event-list" disabled />
+        <p id="list-status" role="status">Loading saved events…</p>
+        <noscript><p>Enable JavaScript to search the list or use the optional map. You can also <a href="../data.geojson">download the saved event data</a> or visit the <a href="https://www.parkrun.org.uk/events/">official event directory</a>.</p></noscript>
+        <ul id="event-list" class="event-list"></ul>
+        <p><a href="../data.geojson">Download the original event data (GeoJSON)</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a href="../">← Back to orr.ie</a>
+      <span>An independent project; not affiliated with parkrun.</span>
+    </footer>
+  </body>
+</html>
